@@ -9,11 +9,11 @@ const Trabalhadores = require('./controllers/TrabalhadoresController');
 
 app.use(bodyParser.json());
 app.use(cors());
+app.use('/animais', Animais);
+app.use('/trabalhadores', Trabalhadores);
 app.use('/',(req, res) => {
     res.send('Estou aqui');
 });
-app.use('/animais', Animais);
-app.use('/trabalhadores', Trabalhadores);
 app.listen(port, () => {
     console.log(`Servidor rodando na porta ${port}`);
 });
