@@ -23,8 +23,8 @@ router.post('/', async (req, res) => {
 
 router.get('/:id', async (req, res) => {
     try {
-        const Trabalhador = await Trabalhadores.findByPk(req.params.id);
-        if (!Trabalhador) {
+        const trabalhador = await Trabalhadores.findByPk(req.params.id);
+        if (!trabalhador) {
             return res.status(404).json({ error: 'Trabalhador não encontrado' });
         }
         res.status(200).json({message:'Trabalhador encontrado com sucesso', trabalhador});

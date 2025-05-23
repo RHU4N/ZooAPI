@@ -11,9 +11,12 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use('/animais', Animais);
 app.use('/trabalhadores', Trabalhadores);
-app.use('/',(req, res) => {
+
+// Rota padrão apenas para GET /
+app.get('/', (req, res) => {
     res.send('Estou aqui');
 });
+
 app.listen(port, () => {
     console.log(`Servidor rodando na porta ${port}`);
 });
